@@ -5,7 +5,7 @@ export default function MissionImage() {
     <div className="relative group">
       <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#cea741]/20 transition-transform duration-700 hover:scale-[1.02]">
         <Image
-          src="/Images/Mission.jpg"  // ✅ Use string path from public folder
+          src="/Images/mission.jpg"  // ✅ Use string path from public folder
           alt="Our Mission"
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-1000"
