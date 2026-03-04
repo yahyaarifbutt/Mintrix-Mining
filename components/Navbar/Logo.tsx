@@ -7,9 +7,10 @@ export default function Logo() {
       <Image
         src="/Images/logo.png"
         alt="Mintrix Mining Logo"
-        width={106}
-        height={106}
+        width={75}
+        height={75}
         priority
+        className="w-[75px] h-auto"
       />
     </Link>
   );
