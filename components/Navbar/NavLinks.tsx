@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
 
-// Export this so we can reuse it in the MobileMenu
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export const links = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -9,32 +11,37 @@ export const links = [
 ];
 
 export default function NavLinks() {
+  const pathname = usePathname(); 
+
+  const centerLinks = links.filter(link => link.name !== "Contact");
+
   return (
-    <div className="hidden md:flex gap-8 text-sm font-medium items-center">
-      {links.map((link) => (
-        <Link
-          key={link.name}
-          href={link.href}
-          className="
-            relative
-            text-[#010301]
-            hover:text-[#D1A741]
-            transition-colors
-            tracking-wide
-            after:absolute
-            after:left-0
-            after:-bottom-[3px]
-            after:h-[1px]
-            after:w-0
-            after:bg-[#D1A741]
-            after:transition-all
-            after:duration-300
-            hover:after:w-full
-          "
-        >
-          {link.name}
-        </Link>
-      ))}
+    <div className="hidden md:flex items-center gap-10 text-[15px] font-semibold">
+      {centerLinks.map((link) => {
+        const isActive = pathname === link.href;
+
+        return (
+          <Link
+            key={link.name}
+            href={link.href}
+            // Reduced the py-2 to py-1 to keep the bounding box tighter
+            className={`
+              relative tracking-wider py-1 group transition-colors duration-300
+              ${isActive ? "text-[#cea741]" : "text-[#1b211d]/80 hover:text-[#cea741]"}
+            `}
+          >
+            {link.name}
+            {/* Removed the shadow, thinned the line to 1.5px, 
+              and moved it slightly closer to the text (-bottom-0.5) 
+            */}
+            <span className={`
+              absolute left-0 -bottom-0.5 h-[1.5px] bg-[#cea741] 
+              transition-all duration-300 ease-out
+              ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+            `}></span>
+          </Link>
+        );
+      })}
     </div>
   );
 }
