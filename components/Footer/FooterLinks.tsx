@@ -6,7 +6,8 @@ export default function FooterLinks() {
     <nav aria-label="Footer Quick Links">
       <h3 className="text-white text-base font-medium mb-6 tracking-wide">Discover</h3>
       <ul className="space-y-3.5">
-        {FOOTER_DATA.links.map((link) => (
+        {/* Changed .links to .sitemap to match your data structure */}
+        {FOOTER_DATA.sitemap.map((link) => ( // [!code ++]
           <li key={link.name}>
             <Link 
               href={link.href} 
