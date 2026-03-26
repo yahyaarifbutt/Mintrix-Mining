@@ -8,13 +8,13 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/Images/Hero.png"
-        alt="Mining Infrastructure"
+        alt="Heavy Industrial Excavation in Kenya"
         fill
         priority
         className="object-cover brightness-110 contrast-110"
       />
 
-      {/* Soft Professional Overlay (NOT too dark) */}
+      {/* Soft Professional Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f0d]/60 via-[#0b0f0d]/40 to-[#0b0f0d]/20" />
 
       {/* Subtle gold atmosphere glow */}
