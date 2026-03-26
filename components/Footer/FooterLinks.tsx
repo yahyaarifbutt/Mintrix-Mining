@@ -1,30 +1,22 @@
 import Link from "next/link";
-
-const footerLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
-];
+import { FOOTER_DATA } from "./footerData";
 
 export default function FooterLinks() {
   return (
-    <div className="flex flex-col items-start">
-      <h4 className="text-[#CEA741] font-bold uppercase tracking-[0.15em] mb-5 text-xs md:text-sm">
-        Links
-      </h4>
-      <ul className="space-y-3 w-full">
-        {footerLinks.map((link) => (
+    <nav aria-label="Footer Quick Links">
+      <h3 className="text-white text-base font-medium mb-6 tracking-wide">Discover</h3>
+      <ul className="space-y-3.5">
+        {FOOTER_DATA.links.map((link) => (
           <li key={link.name}>
-            <Link
-              href={link.href}
-              className="text-[#f5f5f5]/60 hover:text-[#CEA741] text-sm transition-colors duration-200 block py-1"
+            <Link 
+              href={link.href} 
+              className="text-[#A3A3A3] hover:text-white text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#D4AF37]"
             >
               {link.name}
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }

@@ -17,13 +17,12 @@ export default function HeroButtons() {
             hover:-translate-y-1
             transition-all duration-300
           "
-
       >
-        Explore Services
+        Explore Operations
       </Link>
 
       <Link
-        href="/contact"
+        href="/investments"
         className="
           border-2 border-[#D1A741]
           text-[#D1A741]
@@ -34,9 +33,8 @@ export default function HeroButtons() {
           hover:text-[#0b0f0d]
           transition-all duration-300
         "
-
       >
-        Contact Us
+        Partner With Us
       </Link>
     </div>
   );

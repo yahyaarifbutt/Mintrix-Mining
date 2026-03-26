@@ -1,35 +1,32 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { FOOTER_DATA } from "./footerData";
 
 export default function FooterContact() {
+  const { contact } = FOOTER_DATA;
+  
   return (
-    <div className="flex flex-col items-start">
-      <h4 className="text-[#CEA741] font-bold uppercase tracking-[0.15em] mb-5 text-xs md:text-sm">
-        Contact Us
-      </h4>
-      <ul className="space-y-4 text-[#f5f5f5]/80 text-sm w-full">
+    <address className="not-italic">
+      <h3 className="text-white text-base font-medium mb-6 tracking-wide">Contact</h3>
+      <ul className="space-y-3.5 text-[#A3A3A3] text-sm leading-relaxed">
         <li>
           <a 
-            href="mailto:info@mintrixmining.com" 
-            className="group flex items-start gap-3 hover:text-white transition-colors"
+            href={`mailto:${contact.email}`} 
+            className="hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#D4AF37]"
           >
-            <Mail size={18} className="text-[#CEA741] mt-0.5 shrink-0" />
-            <span className="break-all">info@mintrixmining.com</span>
+            {contact.email}
           </a>
         </li>
         <li>
           <a 
-            href="tel:+1234567890" 
-            className="group flex items-start gap-3 hover:text-white transition-colors"
+            href={`tel:${contact.phone.replace(/\s/g, '')}`} 
+            className="hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:text-[#D4AF37]"
           >
-            <Phone size={18} className="text-[#CEA741] mt-0.5 shrink-0" />
-            <span>+1 234 567 890</span>
+            {contact.phone}
           </a>
         </li>
-        <li className="flex items-start gap-3">
-            <MapPin size={18} className="text-[#CEA741] mt-0.5 shrink-0" />
-            <span className="max-w-[200px] leading-relaxed">123 Mining St, Nairobi, Kenya</span>
+        <li className="pr-4 md:pr-0">
+          {contact.address}
         </li>
       </ul>
-    </div>
+    </address>
   );
 }
