@@ -26,7 +26,7 @@ export default function Footer() {
 {/* Logo Area */}
           <Link href="/" className="mb-5 block">
             <Image 
-              src="/Images/Mintrix-Kenya.png" /* <-- CHANGE THIS TO YOUR WHITE-TEXT LOGO FILE NAME */
+              src="/Images/logo1.png" /* <-- CHANGE THIS TO YOUR WHITE-TEXT LOGO FILE NAME */
               alt="Mintrix Logo" 
               width={160} 
               height={40} 
