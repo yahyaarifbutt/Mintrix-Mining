@@ -1,4 +1,4 @@
-import { GoogleTagManager } from '@next/third-parties/google'; // [!code ++]
+import { GoogleTagManager } from '@next/third-parties/google'; 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <GoogleTagManager gtmId="GTM-5JCPBKRS" /> // [!code ++]
+      <GoogleTagManager gtmId="GTM-5JCPBKRS" /> 
       <body className="bg-gray-100">
         <Navbar />
         {children}
