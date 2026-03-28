@@ -6,6 +6,9 @@ import Footer from "@/components/Footer/Footer";
 export const metadata = {
   title: "Mintrix Mining",
   description: "Professional mining solutions",
+  verification: {
+    google: "3fUb5B1jBcH65KzPPGp7pSNboqv2LyJgE-gcrJepI08",
+  },
 };
 
 export default function RootLayout({
@@ -15,7 +18,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
       <GoogleTagManager gtmId="GTM-5JCPBKRS" /> 
       <body className="bg-gray-100">
         <Navbar />
