@@ -10,9 +10,16 @@ export default function BackToTop() {
   return (
     <button 
       onClick={scrollToTop}
-      className="flex items-center gap-2 px-6 py-2.5 border border-white/30 rounded text-xs sm:text-sm font-medium uppercase tracking-wider text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CEA741]"
+      className="group flex items-center gap-2.5 px-5 py-2 border border-[#A3A3A3]/30 rounded-full text-xs font-medium uppercase tracking-widest text-[#A3A3A3] hover:text-[#CEA741] hover:border-[#CEA741] hover:bg-[#CEA741]/5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CEA741]"
     >
-      <ArrowUp size={16} />
+      <span className="relative flex items-center justify-center overflow-hidden">
+        {/* Changed hover:-translate-y-1 to hover:-translate-y-0.5 for a softer, controlled lift */}
+        <ArrowUp 
+          size={16} 
+          strokeWidth={2}
+          className="transform group-hover:-translate-y-0.5 transition-transform duration-300 ease-out" 
+        />
+      </span>
       Back to Top
     </button>
   );
