@@ -1,8 +1,7 @@
 import { Montserrat } from "next/font/google";
 import HeroButtons from "./HeroButtons";
 
-// Montserrat is widely used in modern corporate, fintech, and industrial websites.
-// It provides a strong, stable, and highly legible look.
+
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   weight: ["400", "600", "800", "900"],

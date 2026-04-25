@@ -1,12 +1,12 @@
 import Hero from "./Hero/Hero";
+import ServicesSection from "./Services/ServicesSection"; // <-- Imported the new section
 import About from "./AboutSection/About";
 import Features from "./Features/Features";
 import Infrastructure from "./InfrastructureSection/Infrastructure";
 import Vision from "./Vision/Vision"; 
 import Mission from "./Mission/Mission";
 import ContactSupport from "./ContactSupport/ContactSupport"; 
-import Stats from "@/components/Home/Stats"
-
+import Stats from "@/components/Home/Stats";
 import Banner from "./Banner/Banner"; 
 
 export default function HomeComponent() {
@@ -14,6 +14,9 @@ export default function HomeComponent() {
     <main className="bg-white">
       {/* 01. Introduction */}
       <Hero />
+      
+      {/* 01.5 Core Offerings */}
+      <ServicesSection /> {/* <-- Added right after the Hero section */}
       
       {/* 02. Identity & Story */}
       <About />
@@ -32,12 +35,11 @@ export default function HomeComponent() {
       {/* 06. High-Impact Closing Statement (Deep Dark) */}
       <Banner />
 
-       {/* 05. Our Mission */}
+       {/* 07. Our Mission */}
       <Mission /> 
 
       <ContactSupport />
 
-      
     </main>
   );
 }

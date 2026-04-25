@@ -12,20 +12,56 @@ const backgroundImages = [
   "/Images/Services-Hero.png",
 ];
 
+// Interface for our gold particles
+interface Particle {
+  id: number;
+  left: number;
+  size: number;
+  duration: number;
+  delay: number;
+}
+
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [particles, setParticles] = useState<Particle[]>([]);
 
-  // Smoothly cycle through images every 5 seconds
+  // Smoothly cycle through images & generate particles safely on the client
   useEffect(() => {
+    // Image Slider Timer
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
     }, 5000);
+
+    // Generate random gold dust particles
+    const newParticles = Array.from({ length: 40 }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100, // Random horizontal position (0-100%)
+      size: Math.random() * 3 + 1.5, // Random size between 1.5px and 4.5px
+      duration: Math.random() * 15 + 10, // Float duration between 10s and 25s
+      delay: Math.random() * 10, // Start delay between 0s and 10s
+    }));
+    setParticles(newParticles);
+
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative w-full h-[90vh] min-h-[700px] overflow-hidden bg-[#050706]">
       
+      {/* Inline Styles for Custom Gold Animations */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes floatUp {
+          0% { transform: translateY(10vh) scale(0.5); opacity: 0; }
+          10% { opacity: 0.9; }
+          80% { opacity: 0.7; }
+          100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.6; transform: scale(1.1); }
+        }
+      `}} />
+
       {/* Background Image Slider */}
       <div className="absolute inset-0 w-full h-full bg-black">
         {backgroundImages.map((src, index) => (
@@ -34,7 +70,7 @@ export default function Hero() {
             src={src}
             alt={`Mintrix Background ${index + 1}`}
             fill
-            priority={index === 0} // Only prioritize the first image to optimize loading
+            priority={index === 0}
             className={`object-cover transition-opacity duration-1000 ease-in-out ${
               index === currentImage ? "opacity-60" : "opacity-0"
             }`}
@@ -46,11 +82,36 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f0d]/90 via-[#0b0f0d]/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f0d] via-transparent to-transparent" />
 
-      {/* Decorative Atmosphere Elements */}
-      <div className="absolute top-[20%] left-[5%] w-1.5 h-1.5 rounded-full bg-[#D1A741] shadow-[0_0_15px_#D1A741] opacity-80" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#D1A741]/10 blur-[100px] rounded-full pointer-events-none" />
-      
-      
+      {/* --- NEW: Floating Gold Dust Particles --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className="absolute bottom-0 rounded-full bg-[#D1A741] shadow-[0_0_10px_2px_#D1A741]"
+            style={{
+              left: `${p.left}%`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              animation: `floatUp ${p.duration}s linear ${p.delay}s infinite`,
+              opacity: 0, // Handled by keyframes
+            }}
+          />
+        ))}
+      </div>
+
+      {/* --- ENHANCED: Animated Decorative Atmosphere Elements --- */}
+      <div 
+        className="absolute top-[20%] left-[5%] w-2 h-2 rounded-full bg-[#D1A741] shadow-[0_0_20px_4px_#D1A741]" 
+        style={{ animation: 'pulseGlow 4s ease-in-out infinite' }}
+      />
+      <div 
+        className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#D1A741]/20 blur-[120px] rounded-full pointer-events-none" 
+        style={{ animation: 'pulseGlow 7s ease-in-out infinite' }}
+      />
+      <div 
+        className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#FFF2CD]/10 blur-[100px] rounded-full pointer-events-none" 
+        style={{ animation: 'pulseGlow 6s ease-in-out infinite 1s' }}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex items-center h-full px-6 lg:px-16">
