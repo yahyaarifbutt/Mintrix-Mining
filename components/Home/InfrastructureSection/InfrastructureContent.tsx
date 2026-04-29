@@ -1,47 +1,78 @@
+import { Montserrat } from "next/font/google";
+import { Factory, ShieldCheck, Globe2 } from "lucide-react";
+
+const montserrat = Montserrat({ 
+  subsets: ["latin"], 
+  weight: ["400", "600", "700", "800"] 
+});
+
 export default function InfrastructureContent() {
   const features = [
-    { label: "Redundancy", detail: "N+1 Power Grid Backup" },
-    { label: "Security", detail: "Biometric AI Surveillance" },
-    { label: "Cooling", detail: "Liquid Immersion Ready" },
+    { 
+      label: "Refining & Smelting", 
+      detail: "State-of-the-art purification facilities delivering 99.99% purity.",
+      icon: Factory
+    },
+    { 
+      label: "High-Tier Security", 
+      detail: "Vault-grade protection with 24/7 biometric AI surveillance.",
+      icon: ShieldCheck
+    },
+    { 
+      label: "Secure Logistics", 
+      detail: "Armored global transport and unbroken supply chain networks.",
+      icon: Globe2
+    },
   ];
 
   return (
-    <div className="space-y-10 text-[#1b211d] font-hero">
-      {/* Headings */}
-      <div className="space-y-6">
-        <h3 className="text-[#cea741] font-semibold tracking-[0.25em] uppercase text-sm font-hero">
+    <div className="space-y-8 text-[#1b211d]">
+      
+      {/* Heading Section (Tightened space-y) */}
+      <div className="space-y-4 relative">
+        <div className="absolute -left-6 top-2 w-2 h-2 bg-[#D1A741] rounded-full animate-ping" />
+        <div className="absolute -left-6 top-2 w-2 h-2 bg-[#D1A741] rounded-full" />
+
+        <h3 className={`${montserrat.className} text-[#D1A741] font-semibold tracking-[0.35em] uppercase text-sm ml-2`}>
           Physical Assets
         </h3>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight font-hero">
-          Where Digital Assets Meet{" "}
-          <span className="text-[#252723] font-light italic font-hero">
-            Heavy Industry.
+        <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold text-[#0b0f0d] tracking-tight flex flex-col gap-1`}>
+          <span>Where Raw Extraction Meets</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D1A741] to-[#e8c678]">
+            Global Trading.
           </span>
         </h2>
 
-        <div className="w-20 h-[2px] bg-[#cea741]" />
+        <div className="w-20 h-1.5 bg-gradient-to-r from-[#D1A741] via-[#f5d98a] to-[#D1A741] rounded-full shadow-[0_0_15px_rgba(209,167,65,0.5)] transform origin-left hover:scale-x-150 transition-transform duration-700 bg-[length:200%_auto] animate-gradient mt-2" />
       </div>
 
-      {/* Paragraph */}
-      <p className="text-lg leading-relaxed text-[#1b211d] opacity-80 max-w-md font-hero">
-        Our facilities are engineered for the extreme. From the Kenyan highlands to global tech hubs, we deploy proprietary cooling and power systems that set the gold standard for uptime.
-      </p>
+      <div className="pl-6 border-l-2 border-[#D1A741]/30">
+        <p className="text-base md:text-lg leading-relaxed text-gray-600 max-w-md">
+          Our facilities are engineered for maximum yield and security. From the Kenyan highlands to international trading hubs, we deploy infrastructure that sets the gold standard.
+        </p>
+      </div>
 
-      {/* Features List */}
-      <div className="space-y-6 pt-4">
+      {/* Upgraded Feature Cards (Tightened padding to p-4) */}
+      <div className="space-y-3 pt-2">
         {features.map((item, i) => (
-          <div key={i} className="flex items-start space-x-4">
-            <div className="mt-1.5 w-2 h-2 rounded-full bg-[#cea741]" />
+          <div 
+            key={i} 
+            className="group flex items-start gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-[0_10px_25px_rgba(209,167,65,0.1)] hover:border-[#D1A741]/40 transition-all duration-300"
+          >
+            <div className="flex-shrink-0 p-2.5 rounded-lg bg-[#0b0f0d] text-[#D1A741] group-hover:bg-[#D1A741] group-hover:text-white transition-colors duration-300">
+              <item.icon className="w-5 h-5" />
+            </div>
             <div>
-              <h4 className="font-bold text-[#1b211d] uppercase tracking-wide text-sm font-hero">
+              <h4 className={`${montserrat.className} font-bold text-[#0b0f0d] text-sm mb-1`}>
                 {item.label}
               </h4>
-              <p className="text-[#252723] text-sm opacity-70 font-hero">{item.detail}</p>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{item.detail}</p>
             </div>
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
