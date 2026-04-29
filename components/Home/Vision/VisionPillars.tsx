@@ -1,18 +1,25 @@
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ 
+  subsets: ["latin"], 
+  weight: ["400", "600", "700", "800"] 
+});
+
 const visionPoints = [
   {
     number: "01",
-    title: "Carbon Neutrality",
-    desc: "By 2028, our goal is to operate 100% on renewable energy sources, integrating geothermal and solar power from the Rift Valley into our grid."
+    title: "Ethical Extraction",
+    desc: "Pioneering sustainable mining practices by optimizing yield technology and prioritizing community development in every region we operate."
   },
   {
     number: "02",
-    title: "Traditional Gold Brokers",
-    desc: "Many investors enter the gold market through broker-based transactions, often exposed to pricing spreads and counterparty risk."
+    title: "Market Liquidity",
+    desc: "Bridging the gap between raw extraction and institutional buyers, ensuring seamless, high-volume gold trading with competitive pricing."
   },
   {
     number: "03",
-    title: "Asset-Backed Gold Participation",
-    desc: "Structured participation models supported by physical gold ownership, secure custody, and transparent operational cycles."
+    title: "Verifiable Provenance",
+    desc: "Guaranteeing the integrity of our supply chain with full transparency from the mine to the vault, backed by world-class refining standards."
   }
 ];
 
@@ -22,24 +29,24 @@ export default function VisionPillars() {
       {visionPoints.map((item, i) => (
         <div 
           key={i} 
-          className="group relative p-10 bg-white border border-[#252723]/10 hover:border-[#cea741] transition-all duration-500 rounded-none"
+          className="group relative p-10 bg-white border border-gray-100 hover:border-[#D1A741]/40 hover:shadow-[0_10px_25px_rgba(209,167,65,0.1)] transition-all duration-500 rounded-xl"
         >
           {/* Large Background Number */}
-          <div className="absolute top-4 right-6 text-6xl font-black text-[#1b211d]/5 group-hover:text-[#cea741]/10 transition-colors">
+          <div className={`${montserrat.className} absolute top-4 right-6 text-6xl font-black text-[#0b0f0d]/5 group-hover:text-[#D1A741]/10 transition-colors`}>
             {item.number}
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-xl font-bold text-[#1b211d] uppercase tracking-wider">
+          <div className="space-y-6 relative z-10">
+            <h4 className={`${montserrat.className} text-xl font-bold text-[#0b0f0d] uppercase tracking-wider`}>
               {item.title}
             </h4>
             
-            <p className="text-[#252723]/70 leading-relaxed font-medium">
+            <p className="text-gray-500 leading-relaxed text-sm md:text-base">
               {item.desc}
             </p>
 
-            {/* Bottom Accent Line */}
-            <div className="w-0 h-1 bg-[#cea741] group-hover:w-full transition-all duration-500" />
+            {/* Bottom Accent Line - Updated to Gradient */}
+            <div className="w-0 h-1 bg-gradient-to-r from-[#D1A741] to-[#e8c678] group-hover:w-full transition-all duration-500 rounded-full" />
           </div>
         </div>
       ))}
