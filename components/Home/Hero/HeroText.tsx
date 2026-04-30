@@ -12,7 +12,7 @@ export default function HeroText() {
       <h1 className={`${montserrat.className} text-5xl md:text-7xl font-extrabold leading-[1.1] text-white tracking-tight`}>
         Unlocking Kenya’s Gold, <br />
         <span className="bg-gradient-to-r from-[#D1A741] via-[#FFF2CD] to-[#D1A741] bg-clip-text text-transparent drop-shadow-sm">
-          Powering Global Value.
+          Powering Global Value
         </span>
       </h1>
 

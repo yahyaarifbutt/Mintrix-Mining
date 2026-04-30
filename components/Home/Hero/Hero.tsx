@@ -6,10 +6,10 @@ import HeroText from "./HeroText";
 
 // Array of your background images
 const backgroundImages = [
-  "/Images/Hero.png",
-  "/Images/mission.jpg",
-  "/Images/mining.png",
-  "/Images/Services-Hero.png",
+  "/Images/HeroImage.jpg",
+  "/Images/HeroImage2.jpg",
+  "/Images/HeroImage3.jpg",
+  "/Images/HeroImage4.jpg",
 ];
 
 // Interface for our gold particles

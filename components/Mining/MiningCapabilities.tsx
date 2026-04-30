@@ -40,7 +40,7 @@ export default function MiningCapabilities() {
             Extraction Phases
           </h3>
           <h2 className={`${montserrat.className} text-3xl md:text-5xl font-extrabold text-white tracking-tight`}>
-            End-to-End <span className="text-[#D1A741]">Infrastructure.</span>
+            End-to-End <span className="text-[#D1A741]">Infrastructure</span>
           </h2>
           <div className="w-16 h-1 bg-[#D1A741] rounded-full mt-4" />
         </div>

@@ -2,108 +2,114 @@ import Link from "next/link";
 import Image from "next/image";
 import { FOOTER_DATA } from "./footerData";
 import BackToTop from "./BackToTop";
+import NewsletterForm from "./NewsLetter";
+import FooterContact from "./FooterContact";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#0A0A0A] rounded-t-[2rem] overflow-hidden relative flex flex-col mt-8 antialiased shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
-      
-      {/* Top Section - Aggressively reduced padding to py-5 and md:py-6 for an ultra-slim footprint */}
-      <div className="max-w-[1400px] mx-auto w-full relative z-10 px-8 py-5 md:px-12 md:py-6 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-6">
+    <footer className="w-full bg-[#050505] relative flex flex-col mt-8 antialiased border-t border-white/5">
+      {/* Premium subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#000000] opacity-50 pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto w-full relative z-10 px-6 pt-12 pb-6 md:px-12">
         
-        {/* Left Column */}
-        <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start">
+        {/* Main Grid Section - Spread across 5 logical columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-10">
           
-          {/* Logo Area - Shrunk the logo significantly to allow the footer to collapse */}
-          <Link href="/" className="mb-3 block transform hover:opacity-90 transition-opacity">
-            <Image 
-              src="/Images/logo1.png" 
-              alt="Mintrix Logo" 
-              width={115} /* Significantly reduced width */
-              height={28} /* Significantly reduced height */
-              className="object-contain"
-              priority
-            />
-          </Link>
-
-          {/* Reduced margin-bottom */}
-          <p className="text-[#A3A3A3] text-sm leading-relaxed mb-4 max-w-sm">
-            {FOOTER_DATA.brand.description}
-          </p>
-
-          {/* Social Icons - Reduced margin-bottom */}
-          <div className="flex items-center gap-4 mb-5">
-            {FOOTER_DATA.socials.map((social) => {
-              const Icon = social.Icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit Mintrix on ${social.name}`}
-                  className="text-[#A3A3A3] hover:text-[#CEA741] transform hover:-translate-y-1 hover:scale-110 transition-all duration-300 drop-shadow-md hover:drop-shadow-[0_0_8px_rgba(206,167,65,0.4)]"
-                >
-                  <Icon size={20} strokeWidth={1.5} />
-                </a>
-              );
-            })}
+          {/* Column 1: Brand & Socials (Span 3) */}
+          <div className="lg:col-span-3 flex flex-col items-start pr-2">
+            <Link href="/" className="mb-4 block transform hover:opacity-80 transition-opacity duration-300">
+              <Image 
+                src="/Images/logo1.png" 
+                alt="Mintrix Logo" 
+                width={120} 
+                height={30} 
+                className="object-contain"
+                priority
+              />
+            </Link>
+            <p className="text-[#888888] text-xs leading-relaxed mb-6 font-light">
+              {FOOTER_DATA.brand.description}
+            </p>
+            {/* INCREASED GAP AND ICON SIZE HERE */}
+            <div className="flex items-center gap-5"> 
+              {FOOTER_DATA.socials.map((social) => {
+                const Icon = social.Icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit Mintrix on ${social.name}`}
+                    className="text-[#666666] hover:text-[#CEA741] transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <Icon size={24} strokeWidth={1.5} /> {/* Size increased to 24 */}
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
+          {/* Column 2: Quick Links (Span 2) */}
+          <div className="lg:col-span-2 lg:pl-4">
+            <h3 className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Site Map</h3>
+            <ul className="space-y-2.5">
+              {FOOTER_DATA.sitemap.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-[#888888] hover:text-[#CEA741] text-xs transition-colors duration-300 flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-transparent group-hover:bg-[#CEA741] transition-all duration-300" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Legal (Span 2) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Legal</h3>
+            <ul className="space-y-2.5">
+              {FOOTER_DATA.legal.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-[#888888] hover:text-[#CEA741] text-xs transition-colors duration-300 flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-transparent group-hover:bg-[#CEA741] transition-all duration-300" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact (Span 2) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Contact</h3>
+            <FooterContact />
+          </div>
+
+          {/* Column 5: Newsletter (Span 3) */}
+          <div className="lg:col-span-3 lg:pl-2">
+            <h3 className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Stay Updated</h3>
+            <NewsletterForm />
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="w-full pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[#666666] text-xs tracking-wide font-light">
+            Copyright &copy; {new Date().getFullYear()} <span className="text-white font-medium">Mintrix World</span>. All Rights Reserved.
+          </p>
           <BackToTop />
         </div>
 
-        {/* Spacer Column for Desktop */}
-        <div className="hidden lg:block lg:col-span-3"></div>
-
-        {/* Middle Column: Site Map */}
-        <div className="md:col-span-3 lg:col-span-2">
-          {/* Tighter margin below heading */}
-          <h3 className="text-white font-semibold mb-2.5 text-sm tracking-wide">Site Map</h3>
-          {/* Tighter spacing between list items */}
-          <ul className="space-y-2">
-            {FOOTER_DATA.sitemap.map((link) => (
-              <li key={link.name}>
-                <Link 
-                  href={link.href}
-                  className="text-[#A3A3A3] hover:text-[#CEA741] text-sm transition-colors duration-300 relative group inline-block"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#CEA741] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Right Column: Legal */}
-        <div className="md:col-span-3 lg:col-span-2">
-          {/* Tighter margin below heading */}
-          <h3 className="text-white font-semibold mb-2.5 text-sm tracking-wide">Legal</h3>
-          {/* Tighter spacing between list items */}
-          <ul className="space-y-2">
-            {FOOTER_DATA.legal.map((link) => (
-              <li key={link.name}>
-                <Link 
-                  href={link.href}
-                  className="text-[#A3A3A3] hover:text-[#CEA741] text-sm transition-colors duration-300 relative group inline-block"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#CEA741] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
       </div>
-
-      {/* Bottom Bar - Made slightly thinner */}
-      <div className="w-full bg-[#CEA741] py-2.5 px-6 text-center text-black relative z-10 mt-auto">
-        <p className="text-xs sm:text-sm font-semibold tracking-wide">
-          Copyright &copy; {new Date().getFullYear()}, Mintrix World. All Rights Reserved.
-        </p>
-      </div>
-
     </footer>
   );
 }

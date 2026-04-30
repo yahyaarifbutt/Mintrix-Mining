@@ -4,7 +4,7 @@ import About from "./AboutSection/About";
 import Features from "./Features/Features";
 import Infrastructure from "./InfrastructureSection/Infrastructure";
 import Vision from "./Vision/Vision"; 
-import Mission from "./Mission/Mission";
+
 import ContactSupport from "./ContactSupport/ContactSupport"; 
 import Stats from "@/components/Home/Stats";
 import Banner from "./Banner/Banner"; 
@@ -35,8 +35,7 @@ export default function HomeComponent() {
       {/* 06. High-Impact Closing Statement (Deep Dark) */}
       <Banner />
 
-       {/* 07. Our Mission */}
-      <Mission /> 
+    
 
       <ContactSupport />
 

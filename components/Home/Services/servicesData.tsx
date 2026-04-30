@@ -8,38 +8,26 @@ export interface ServiceData {
   icon: ReactNode;
 }
 
-// 2. Apply the type to your array
+// 2. Apply the type to your array with 2 services
 export const servicesList: ServiceData[] = [
   {
     id: 1,
-    title: "Gold Buying",
-    image: "/Images/4.jpg", 
+    title: "Gold Mining",
+    image: "/Images/1.jpg", 
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75M3.75 10.125v3.75" />
       </svg>
     ),
   },
   {
     id: 2,
-    title: "Gold Loans",
-    image: "/Images/1.jpg",
+    title: "Gold Trading",
+    image: "/Images/4.jpg",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 18 9 11.25l4.306 4.306L21.75 4.5M21.75 4.5H16.5m5.25 0v5.25" />
       </svg>
     ),
   },
-
-  {
-    id: 3,
-    title: "Gold Analysis, Smelting & Refining",
-    image: "/Images/1.jpg",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
-  },
-  
 ];

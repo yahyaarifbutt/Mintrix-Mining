@@ -40,7 +40,7 @@ export default function InfrastructureContent() {
         <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold text-[#0b0f0d] tracking-tight flex flex-col gap-1`}>
           <span>Where Raw Extraction Meets</span>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D1A741] to-[#e8c678]">
-            Global Trading.
+            Global Trading
           </span>
         </h2>
 

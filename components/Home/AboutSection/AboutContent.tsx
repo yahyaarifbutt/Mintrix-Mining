@@ -28,7 +28,7 @@ export default function AboutContent() {
           <span>Pioneering the Future of</span>
           {/* Added a subtle text gradient to the gold text for a premium shine */}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D1A741] to-[#e8c678]">
-            Gold Trading.
+            Gold Trading
           </span>
         </h2>
 

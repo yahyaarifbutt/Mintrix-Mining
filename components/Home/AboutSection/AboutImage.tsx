@@ -15,7 +15,7 @@ export default function AboutImage() {
       <div className="relative z-10 rounded-3xl overflow-hidden border border-[#D1A741]/30 shadow-2xl transition-all duration-700 transform group-hover:-translate-y-2 group-hover:shadow-[0_30px_60px_rgba(209,167,65,0.25)]">
         
         <Image
-          src="/Images/AboutSection.jpg" 
+          src="/Images/HomeAbout.jpg" 
           alt="Physical Gold Mining Operations"
           width={600}
           height={700}
