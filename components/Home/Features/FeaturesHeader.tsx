@@ -22,7 +22,7 @@ export default function FeaturesHeader() {
         <span>Built for the next generation of</span>
         {/* Added the premium gold gradient and removed the italic styling */}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D1A741] to-[#e8c678]">
-          Industrial Mining.
+          Industrial Mining
         </span>
       </h2>
 

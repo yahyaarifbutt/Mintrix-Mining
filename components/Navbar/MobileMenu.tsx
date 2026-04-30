@@ -28,7 +28,7 @@ export default function MobileMenu() {
       <div
         className={`
           absolute top-full left-0 w-full 
-          bg-[#1b211d] border-t-2 border-[#cea741] shadow-2xl
+          bg-[#0b0b0c]/95 backdrop-blur-xl border-t-2 border-[#cea741] shadow-2xl
           transition-all duration-300 ease-in-out origin-top overflow-hidden
           ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
         `}

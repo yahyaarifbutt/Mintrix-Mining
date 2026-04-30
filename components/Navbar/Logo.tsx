@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/Images/logo.png"
+        src="/Images/logo2.png"
         alt="Mintrix Mining Logo"
         width={75}
         height={75}

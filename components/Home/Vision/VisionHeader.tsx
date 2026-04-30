@@ -23,7 +23,7 @@ export default function VisionHeader() {
       <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold text-[#0b0f0d] tracking-tight flex flex-col gap-1`}>
         <span>Redefining the Standard of</span>
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D1A741] to-[#e8c678]">
-          Global Gold Trading.
+          Global Gold Trading
         </span>
       </h2>
 

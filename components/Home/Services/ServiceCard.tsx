@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, image, icon }: ServiceCardProps) {
   return (
-    <div className="group relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-[0_10px_30px_rgba(209,167,65,0.2)] transition-all duration-500 bg-gray-100">
+    <div className="group relative w-full aspect-[4/5] sm:aspect-[4/5] lg:aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-[0_10px_30px_rgba(209,167,65,0.2)] transition-all duration-500 bg-gray-100">
       
       {/* Background Image with smooth hover scale */}
       <div className="absolute inset-0 w-full h-full">
@@ -33,14 +33,14 @@ export default function ServiceCard({ title, image, icon }: ServiceCardProps) {
       <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D1A741]/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end p-6 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-end p-8 text-center">
         {/* Icon Container */}
-        <div className="w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 group-hover:border-[#D1A741] group-hover:bg-[#D1A741] text-white group-hover:text-[#0b0f0d] rounded-full flex items-center justify-center mb-4 transition-all duration-300 transform group-hover:-translate-y-2">
+        <div className="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 group-hover:border-[#D1A741] group-hover:bg-[#D1A741] text-white group-hover:text-[#0b0f0d] rounded-full flex items-center justify-center mb-5 transition-all duration-300 transform group-hover:-translate-y-2">
           {icon}
         </div>
         
         {/* Title */}
-        <h3 className={`${montserrat.className} text-white text-sm sm:text-base font-semibold leading-tight group-hover:text-[#D1A741] transition-colors duration-300 transform group-hover:-translate-y-1`}>
+        <h3 className={`${montserrat.className} text-white text-lg sm:text-xl font-bold leading-tight group-hover:text-[#D1A741] transition-colors duration-300 transform group-hover:-translate-y-1`}>
           {title}
         </h3>
       </div>

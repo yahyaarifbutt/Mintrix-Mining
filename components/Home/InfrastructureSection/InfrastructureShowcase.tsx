@@ -14,7 +14,7 @@ export default function InfrastructureShowcase() {
       {/* Main Image Container */}
       <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl group">
         <Image
-          src="/Images/About.png" // Keep your main image here
+          src="/Images/HomeInfra.jpg" // Keep your main image here
           alt="Mintrix Global Facility"
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out"

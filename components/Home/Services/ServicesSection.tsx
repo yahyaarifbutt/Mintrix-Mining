@@ -12,7 +12,7 @@ export default function ServicesSection() {
       {/* Subtle Gold Ambient Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#D1A741]/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-[90rem] mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
         <div className="text-center mb-12 space-y-4">
@@ -20,13 +20,13 @@ export default function ServicesSection() {
             Services We <span className="text-[#D1A741]">Provide</span>
           </h2>
           <p className={`${montserrat.className} text-gray-500 text-sm md:text-base max-w-2xl mx-auto font-regular`}>
-            Comprehensive gold mining and financial solutions tailored for global markets and strategic investments.
+            Comprehensive gold mining and trading solutions tailored for global markets and strategic investments.
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-[#D1A741] to-[#e0b84f] mx-auto mt-6 rounded-full shadow-[0_0_10px_rgba(209,167,65,0.4)]" />
         </div>
 
-        {/* Services Grid - Tighter max-width and reduced gap */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8 max-w-5xl mx-auto mb-12">
+        {/* Services Grid - Optimized for 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {servicesList.map((service) => (
             <ServiceCard
               key={service.id}
