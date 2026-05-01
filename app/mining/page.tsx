@@ -1,27 +1,26 @@
 import MiningHero from "@/components/Mining/MiningHero";
 import MiningOverview from "@/components/Mining/MiningOverview";
-import Mission from "@/components/Mining/Mission/Mission";
-import MiningRefining from "@/components/Mining/MiningRefining";
-import MiningGlobal from "@/components/Mining/MiningGlobal";
-import MiningCapabilities from "@/components/Mining/MiningCapabilities";
+import ActiveSites from "@/components/Mining/ActiveSites";
+import MiningProcess from "@/components/Mining/MiningProcess";
+import OperationalAdvantages from "@/components/Mining/OperationalAdvantages";
+import MiningCTA from "@/components/Mining/MiningCTA";
 
 // SEO Metadata for the Mining Page
 export const metadata = {
-  title: "Gold Mining Operations | Mintrix World",
-  description: "End-to-end industrial gold extraction, utilizing AI-driven geological intelligence and state-of-the-art heavy machinery for maximum yield and purity.",
+  title: "Mining Operations | Mintrix — Gold & Mineral Extraction in Kenya",
+  description: "Mintrix operates active gold and mineral mining sites in Kenya. We manage the full extraction and processing pipeline — supplying directly to global buyers with verified quality and consistent output.",
+  keywords: "gold mining operations Kenya, mineral extraction company, direct mine supply",
 };
 
 export default function MiningPage() {
   return (
     <main className="w-full bg-[#0b0f0d] min-h-screen overflow-x-hidden">
-      <MiningHero />           {/* Dark */}
-      <MiningOverview />       {/* White */}
-                    {/* White - Mission Statement */}
-      <MiningRefining />       {/* Dark - Asymmetrical Split Layout */}
-      
-      <MiningGlobal />         {/* White - Editorial List Layout */}
-      <MiningCapabilities />   {/* Dark */}
-      <Mission />
+      <MiningHero />              {/* Dark - Hero Section */}
+      <MiningOverview />          {/* White - Operations Overview */}
+      <ActiveSites />             {/* Light/Gray - Active Mining Sites */}
+      <MiningProcess />           {/* Dark - How Our Operations Work */}
+      <OperationalAdvantages />   {/* White - Operational Advantages */}
+      <MiningCTA />               {/* Dark - Call to Action & Internal Links */}
     </main>
   );
 }

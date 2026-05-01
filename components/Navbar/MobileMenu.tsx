@@ -8,7 +8,7 @@ import { links } from "./NavLinks";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get the current URL path
+  const pathname = usePathname();
 
   return (
     <div className="md:hidden">
@@ -17,20 +17,20 @@ export default function MobileMenu() {
         onClick={() => setIsOpen(!isOpen)}
         className={`
           p-2 transition-colors duration-300 focus:outline-none
-          ${isOpen ? "text-[#cea741]" : "text-[#1b211d] hover:text-[#cea741]"}
+          ${isOpen ? "text-[#cea741]" : "text-[#0b0f0d] hover:text-[#cea741]"}
         `}
         aria-label="Toggle menu"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
       </button>
 
       {/* Dropdown Menu Overlay */}
       <div
         className={`
           absolute top-full left-0 w-full 
-          bg-[#0b0b0c]/95 backdrop-blur-xl border-t-2 border-[#cea741] shadow-2xl
+          bg-white shadow-2xl border-t border-gray-100
           transition-all duration-300 ease-in-out origin-top overflow-hidden
-          ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
+          ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
         <div className="flex flex-col pb-6">
@@ -43,21 +43,19 @@ export default function MobileMenu() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`
-                  group flex items-center justify-between px-8 py-6
-                  border-b border-[#252723] text-lg font-medium transition-all duration-300
+                  group flex items-center justify-between px-8 py-5
+                  border-b border-gray-50 text-[14px] font-bold uppercase tracking-widest transition-all duration-300
                   ${isActive 
-                    ? "bg-[#252723] text-[#cea741]" 
-                    : "text-white/90 hover:bg-[#252723] hover:text-[#cea741]"}
+                    ? "bg-gray-50 text-[#cea741]" 
+                    : "text-[#0b0f0d]/80 hover:bg-gray-50 hover:text-[#cea741]"}
                 `}
               >
-                <div className="flex items-center gap-3">
-                   {/* Decorative Dot that stays visible when active */}
+                <div className="flex items-center gap-4">
                    <span className={`
-                     w-1.5 h-1.5 rounded-full bg-[#cea741] transition-opacity duration-300 shadow-[0_0_8px_#cea741]
+                     w-1.5 h-1.5 rounded-full bg-[#cea741] transition-opacity duration-300
                      ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
                    `} />
                    
-                   {/* Link Name with slide effect (stays slid over when active) */}
                    <span className={`
                      transition-transform duration-300
                      ${isActive ? "translate-x-1" : "group-hover:translate-x-1"}
@@ -66,7 +64,6 @@ export default function MobileMenu() {
                    </span>
                 </div>
 
-                {/* Arrow Icon */}
                 <ChevronRight className={`
                   w-5 h-5 text-[#cea741] transition-all duration-300
                   ${isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}

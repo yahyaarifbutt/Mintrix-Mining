@@ -3,8 +3,8 @@ import AboutImage from "./AboutImage";
 
 export default function About() {
   return (
-    // CHANGED: py-28 to py-10 lg:py-12 to significantly reduce top and bottom spacing
-    <section className="relative py-10 lg:py-12 px-6 bg-[#ffffff] overflow-hidden">
+    // CHANGED: Replaced py with specific pt and pb. Tighter top, relaxed bottom.
+    <section className="relative pt-8 lg:pt-10 pb-16 lg:pb-24 px-6 bg-[#ffffff] overflow-hidden">
       
       {/* 1. High-End Architectural Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#D1A74110_1px,transparent_1px),linear-gradient(to_bottom,#D1A74110_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 pointer-events-none" />
