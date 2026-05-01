@@ -23,7 +23,7 @@ export const FOOTER_DATA = {
     { name: "Instagram", href: "https://www.instagram.com/mintrix.world/", Icon: Instagram },
   ],
   contact: {
-    email: "info@mintrixcontracting.com",
+    email: "info@mintrix.world.com",
     phone: "+254 20 123 4567",
     address: "123 Mining Infrastructure Hub, Nairobi, Kenya",
     Icons: { MapPin, Phone, Mail }
