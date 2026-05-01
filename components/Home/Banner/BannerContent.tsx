@@ -38,9 +38,7 @@ export default function BannerContent() {
           Contact Us
         </Link>
 
-        <Link href="/about" className={`${montserrat.className} border-2 border-[#D1A741] text-[#D1A741] px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-[#D1A741] hover:text-[#0b0f0d] transition-all duration-300`}>
-          Download Profile
-        </Link>
+       
       </div>
     </div>
   );

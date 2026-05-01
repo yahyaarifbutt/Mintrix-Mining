@@ -9,6 +9,9 @@ export const metadata = {
   verification: {
     google: "3fUb5B1jBcH65KzPPGp7pSNboqv2LyJgE-gcrJepI08",
   },
+  other: {
+    "facebook-domain-verification": "a0axux7sb90kdxcincuwwyit1f3g7m",
+  },
 };
 
 export default function RootLayout({

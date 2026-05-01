@@ -16,7 +16,7 @@ export default function NavLinks() {
   const centerLinks = links.filter(link => link.name !== "Contact");
 
   return (
-    <div className="flex items-center gap-12 text-[13px] uppercase tracking-[0.2em] font-medium">
+    <div className="flex items-center gap-10 text-[12px] uppercase tracking-[0.2em] font-bold">
       {centerLinks.map((link) => {
         const isActive = pathname === link.href;
 
@@ -25,26 +25,18 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={`
-              relative group transition-all duration-300
-              ${isActive ? "text-[#cea741]" : "text-white/70 hover:text-white"}
+              relative py-2 group transition-all duration-300
+              ${isActive ? "text-[#cea741]" : "text-[#0b0f0d]/70 hover:text-[#cea741]"}
             `}
           >
             {link.name}
 
-            {/* Premium underline glow */}
+            {/* Premium Gold Underline */}
             <span className={`
-              absolute left-0 -bottom-2 h-[2px]
-              bg-gradient-to-r from-[#cea741] to-[#f5d06f]
-              transition-all duration-300
+              absolute left-0 -bottom-1 h-[2px]
+              bg-[#cea741]
+              transition-all duration-300 ease-out
               ${isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"}
-            `} />
-
-            {/* subtle glow */}
-            <span className={`
-              absolute left-0 -bottom-2 h-[6px] blur-md
-              bg-[#cea741]/40
-              transition-all duration-300
-              ${isActive ? "w-full opacity-60" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-60"}
             `} />
           </Link>
         );
