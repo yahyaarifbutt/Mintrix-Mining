@@ -1,6 +1,5 @@
 export const stats = [
-  { label: "Active Nodes", value: "2,400+" },
-  { label: "Power Capacity", value: "120MW" },
-  { label: "Uptime", value: "99.99%" },
-  { label: "Global Locations", value: "12" },
+  { label: "For Commodity Buyers", value: "Secure consistent and direct mineral supply." },
+  { label: "For Traders", value: "Access reliable sourcing with scalable volumes." },
+  { label: "For Industrial Partners", value: "Build long-term supply relationships with stable partners." },
 ];

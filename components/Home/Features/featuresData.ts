@@ -1,28 +1,24 @@
-import { Cpu, ShieldCheck, Zap, BarChart3 } from "lucide-react";
+import { Map, Pickaxe, Factory, Truck } from "lucide-react";
 
 export const features = [
   {
-    title: "High-Density Computing",
-    description:
-      "Custom-engineered server racks optimized for maximum hash-rate density and thermal efficiency.",
-    icon: Cpu,
+    title: "Exploration & Survey",
+    description: "Identifying viable mineral resources through meticulous geological analysis.",
+    icon: Map,
   },
   {
-    title: "Industrial Resilience",
-    description:
-      "Tier-3 data center standards with 99.9% uptime guarantees and advanced fire suppression systems.",
-    icon: ShieldCheck,
+    title: "Mining Operations",
+    description: "Efficient extraction using modern equipment and stringent safety standards.",
+    icon: Pickaxe,
   },
   {
-    title: "Energy Optimization",
-    description:
-      "Smart power grid integration reducing operational costs by up to 25% through load balancing.",
-    icon: Zap,
+    title: "Processing & Refining",
+    description: "Upgrading raw materials into market-ready commodities seamlessly.",
+    icon: Factory,
   },
   {
-    title: "Real-Time Analytics",
-    description:
-      "Proprietary monitoring software providing millisecond-level data on hardware performance.",
-    icon: BarChart3,
+    title: "Logistics & Delivery",
+    description: "Reliable supply chain from mine to buyer across local and international markets.",
+    icon: Truck,
   },
 ];
