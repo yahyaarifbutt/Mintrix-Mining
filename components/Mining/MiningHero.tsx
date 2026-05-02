@@ -48,7 +48,7 @@ export default function MiningHero() {
             <div className="flex items-center gap-4 mb-2 md:mb-4">
               <div className="w-12 h-[1px] bg-[#D1A741]" />
               <h3 className={`${montserrat.className} text-[#D1A741] font-semibold tracking-[0.35em] uppercase text-xs`}>
-                Hero Section
+                MINING EXCELLENCE
               </h3>
             </div>
 

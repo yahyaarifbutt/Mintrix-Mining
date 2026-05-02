@@ -7,7 +7,8 @@ export const links = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Gold Mining", href: "/mining" },
-  { name: "Services", href: "/services" },
+  { name: "Gold Trading", href: "/trading" },
+  { name: "Investments", href: "/investment" }, 
   { name: "Contact", href: "/contact" },
 ];
 
