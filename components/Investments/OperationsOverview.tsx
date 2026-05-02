@@ -1,13 +1,24 @@
 "use client";
 import React from "react";
 import { Montserrat } from "next/font/google";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // 1. Import Variants here
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["700", "800"] });
 
-const fadeUp = {
+// 2. Explicitly type as Variants so TypeScript doesn't complain
+const stagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+// 3. Explicitly type as Variants to fix the red squiggly lines on ease arrays
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+  },
 };
 
 export default function OperationsOverview() {
@@ -18,7 +29,7 @@ export default function OperationsOverview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+          variants={stagger} // Used the properly typed stagger object here
           className="grid md:grid-cols-12 gap-12 lg:gap-16 items-center"
         >
           {/* Text Content */}
@@ -27,7 +38,8 @@ export default function OperationsOverview() {
               <span className={`${montserrat.className} inline-block font-extrabold text-[10px] uppercase tracking-widest text-[#D1A741] px-4 py-1.5 rounded-full bg-[#D1A741]/10 border border-[#D1A741]/20`}>
                 PREMIUM GOLD INVESTMENT MODEL
               </span>
-              <motion.h2
+              
+              <h2
                 className={`${montserrat.className} text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight md:leading-snug`}
               >
                 Active Operations. <br /> Verified Production.
@@ -38,31 +50,31 @@ export default function OperationsOverview() {
                   {/* Shine effect div - will be targeted by CSS */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[150%] skew-x-[-20deg] hover-shine-effect z-20"></div>
                 </div>
-              </motion.h2>
+              </h2>
             </div>
+            {/* Escaped apostrophe (Kenya&apos;s) to prevent Next.js build errors */}
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed text-lg font-medium">
               Most investors buying commodities end up with paper instruments. Mintrix is different.
-              We run active gold mining operations at three sites in Kenya's Rosterman region.
+              We run active gold mining operations at three sites in Kenya&apos;s Rosterman region.
               This is capital deployed into the mine itself.
             </motion.p>
           </motion.div>
 
           {/* Image Content */}
           <motion.div variants={fadeUp} className="md:col-span-6 relative flex justify-center items-center group">
-            {/* The Image from public folder with high-end framing and shadow */}
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="relative p-3 rounded-3xl bg-white shadow-2xl border border-gray-100 overflow-hidden"
             >
               <img
-                src="/Images/investment2.jpg" // Replace with your image name from the public folder
+                src="/Images/investment2.jpg" 
                 alt="Active Gold Mining Operations"
                 className="rounded-2xl w-full h-auto object-cover aspect-[4/3] relative z-10"
               />
               {/* Outer glowing border effect */}
               <div className="absolute inset-0 rounded-3xl border-2 border-[#D1A741]/50 shadow-[0_0_20px_10px_rgba(209,167,65,0.15)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
-            </motion.div> {/* <--- THIS WAS PREVIOUSLY JUST </div> AND CAUSED THE ERROR */}
+            </motion.div>
 
             {/* Decorative Gold Shards / Lines */}
             <div className="absolute -top-10 -right-10 w-24 h-24 bg-[#D1A741] rounded-full opacity-10 blur-3xl group-hover:opacity-20 group-hover:scale-110 transition-all duration-300"></div>
@@ -73,7 +85,6 @@ export default function OperationsOverview() {
 
       {/* Embedded CSS for Shine Animation */}
       <style jsx global>{`
-        /* Golden Shine on Hover effect for the text */
         .hover-shine {
           position: relative;
           overflow: hidden;
