@@ -3,29 +3,29 @@ import React from "react";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // 1. Imported Variants
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800", "900"],
 });
 
-// Animation Variants
-const stagger = {
+// 2. Added : Variants to all animation objects
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
-const goldGlint = {
+const goldGlint: Variants = {
   animate: {
     backgroundPosition: ["200% center", "-200% center"],
     transition: {

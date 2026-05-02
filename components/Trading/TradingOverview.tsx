@@ -3,12 +3,12 @@
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion"; // 1. Imported Variants
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
-// Animation Variants
-const staggerContainer = {
+// 2. Added : Variants to all animation objects
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,12 +16,12 @@ const staggerContainer = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
-const fadeRight = {
+const fadeRight: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
@@ -100,7 +100,6 @@ export default function TradingOverview() {
               
               <h2 className={`${montserrat.className} text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.1]`}>
                 What Makes Our <br />
-                {/* COLOR UPDATED HERE TO MATCH HERO SECTION */}
                 <span className="text-[#D1A741]">Trading Different</span>
               </h2>
               <div className="w-16 h-[4px] bg-[#D1A741] rounded-full mt-6" />
@@ -120,8 +119,9 @@ export default function TradingOverview() {
               <div className="mt-8 p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:border-[#D1A741]/30 transition-colors duration-500">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-[#D1A741]" />
                 <div className="absolute -right-4 -top-4 w-24 h-24 bg-[#D1A741]/5 rounded-full blur-2xl group-hover:bg-[#D1A741]/10 transition-colors duration-500" />
+                {/* 3. Escaped the double quotes with &quot; */}
                 <p className="text-gray-700 italic text-sm md:text-base leading-relaxed pl-3 relative z-10">
-                  "That control translates into something buyers rarely find in one place: consistent availability, transparent sourcing, and pricing grounded in real production cost."
+                  &quot;That control translates into something buyers rarely find in one place: consistent availability, transparent sourcing, and pricing grounded in real production cost.&quot;
                 </p>
               </div>
             </motion.div>
