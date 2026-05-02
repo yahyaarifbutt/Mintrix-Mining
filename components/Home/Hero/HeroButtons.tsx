@@ -31,7 +31,7 @@ export default function HeroButtons() {
 
       {/* Gold Trading Button */}
       <Link
-        href="/gold-trading" 
+        href="/trading" 
         className="
           group relative flex-1 flex items-center gap-3 p-3.5 sm:px-5
           border border-white/20 rounded-xl
