@@ -27,13 +27,14 @@ export const metadata: Metadata = {
 
 export default function InvestmentPage() {
   return (
-    <main className="bg-white overflow-hidden">
+    <main className="bg-[#050505] overflow-hidden selection:bg-[#D1A741] selection:text-black">
       <Hero />
       <OperationsOverview />
       <PartnershipGrid />
       <InvestmentCards />
-      <ValueProposition />
       <ProcessSteps />
+      <ValueProposition />
+      
       <SecuritySection />
       <FinalCTA />
     </main>
