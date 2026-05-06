@@ -139,7 +139,7 @@ export default function InvestmentCards() {
                 </div>
                 <div className="p-3.5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl group-hover:border-[#D1A741]/30 transition-colors duration-500">
                   <p className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-1">Duration</p>
-                  <p className="text-lg font-bold text-white mt-1">1–2 Months</p>
+                  <p className="text-lg font-bold text-white mt-1">1-2 Years</p>
                 </div>
               </div>
 
