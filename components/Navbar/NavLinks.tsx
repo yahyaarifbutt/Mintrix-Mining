@@ -23,11 +23,17 @@ export const links = [
       {
         category: "Metals",
         items: [
-          { name: "Gold", href: "/commodity-trading/metals/gold" }
-         
-        ]
+          { name: "Gold", href: "/commodity-trading/metals/gold" },
+          { name: "Copper", href: "/commodity-trading/metals/copper" },
+          { name: "Lithium", href: "/commodity-trading/metals/lithium" }
+        ],
       },
-      
+      {
+        category: "Gemstones",
+        items: [
+          { name: "Ruby", href: "/commodity-trading/gemstones/ruby" }
+        ],
+      },
       // Ready for future expansion:
       /*
       {
