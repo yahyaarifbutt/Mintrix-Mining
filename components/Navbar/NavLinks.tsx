@@ -47,6 +47,7 @@ export const links = [
     ]
   },
   { name: "Investments", href: "/investment" }, 
+  { name: "Mining Operations", href: "/mining-operations" }, // <-- Added right here
   { name: "Contact", href: "/contact" },
 ];
 
