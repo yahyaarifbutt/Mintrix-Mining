@@ -84,7 +84,7 @@ export default function ProfessionalDarkGoldHero() {
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-max">
               
               <Link 
-                href="/pricing" 
+                href="/contact" 
                 className={`${montserrat.className} group relative overflow-hidden w-full sm:w-auto text-center bg-[#D1A741] text-[#050505] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-[11px] sm:text-[12px] tracking-[0.1em] uppercase hover:bg-[#F5E6AD] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_25px_rgba(209,167,65,0.25)] flex items-center justify-center gap-2`}
               >
                 <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

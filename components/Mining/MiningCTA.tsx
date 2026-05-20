@@ -2,6 +2,7 @@
 
 import { Montserrat } from "next/font/google";
 import { Mail, ArrowRight, FileText } from "lucide-react";
+import Link from "next/link";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"], 
@@ -32,18 +33,22 @@ export default function MiningCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
 
           {/* Primary Button */}
-          <button className="group w-full sm:w-auto px-8 py-3 bg-[#D1A741] text-black font-bold tracking-[0.12em] uppercase text-xs rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#e6bb53]">
+          <Link 
+            href="/contact"
+            className="group w-full sm:w-auto px-8 py-3 bg-[#D1A741] text-black font-bold tracking-[0.12em] uppercase text-xs rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#e6bb53]"
+          >
             <span>Request Supply</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </Link>
 
           {/* Secondary Button */}
-          <button className="group w-full sm:w-auto px-7 py-3 border border-white/20 text-white font-bold tracking-[0.12em] uppercase text-xs rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:border-[#D1A741] hover:text-[#D1A741]">
+          <Link 
+            href="/contact"
+            className="group w-full sm:w-auto px-7 py-3 border border-white/20 text-white font-bold tracking-[0.12em] uppercase text-xs rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:border-[#D1A741] hover:text-[#D1A741]"
+          >
             <Mail className="w-4 h-4" />
             <span>Contact Team</span>
-          </button>
-
-          
+          </Link>
 
         </div>
 
