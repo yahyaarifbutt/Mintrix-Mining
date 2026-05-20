@@ -52,7 +52,7 @@ export default function MiningOverview() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
               
               <Image
-                src="/Images/gold-mining.png" 
+                src="/Images/gold-mining.png"
                 alt="Mining Site Overview"
                 fill
                 className="object-cover filter contrast-[1.1] grayscale-[10%] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-[1.5s] ease-out"

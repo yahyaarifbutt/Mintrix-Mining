@@ -150,7 +150,7 @@ export default function MarketPricing() {
           </div>
 
           <Link 
-            href="/pricing" 
+            href="/contact" 
             className={`${montserrat.className} inline-flex items-center gap-2 text-white bg-[#D1A741] hover:bg-[#b89136] px-8 py-4 rounded-full transition-all duration-300 font-bold text-[13px] tracking-widest uppercase shadow-[0_10px_25px_rgba(209,167,65,0.4)] hover:shadow-[0_15px_35px_rgba(209,167,65,0.6)] hover:-translate-y-1`}
           >
             Request a Price Quote <ArrowRight className="w-4 h-4 ml-1" />

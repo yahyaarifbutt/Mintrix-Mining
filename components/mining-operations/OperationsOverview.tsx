@@ -9,7 +9,6 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"
 
 export default function OperationsOverview() {
   return (
-    // Changed py-24 to py-16 and lg:py-40 to lg:py-24 below 👇
     <section className="w-full bg-[#0b0f0d] py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden">
       {/* Subtle Background Texture & Glow */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
@@ -28,9 +27,14 @@ export default function OperationsOverview() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="lg:col-span-8 lg:col-start-5 relative aspect-[4/3] lg:aspect-[16/10] w-full rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl overflow-hidden bg-[#141a17] border border-white/5 shadow-2xl group"
           >
-            {/* Image Placeholder Background */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0b0f0d] via-[#141a17] to-[#1a231e] flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-              <span className="text-gray-600 font-medium tracking-widest uppercase text-sm">Cinematic Operations Image</span>
+            {/* Image Container with Hover Scale */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0b0f0d] via-[#141a17] to-[#1a231e] transition-transform duration-700 group-hover:scale-105">
+              <img 
+                src="/Images/MineralImage3.png" 
+                alt="Mintrix mining operations"
+                className="w-full h-full object-cover opacity-90"
+                loading="lazy"
+              />
             </div>
 
             {/* Floating Glass Metric Badge */}
@@ -42,7 +46,7 @@ export default function OperationsOverview() {
               className="absolute bottom-6 right-6 md:bottom-10 md:right-10 bg-[#0b0f0d]/60 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex items-center gap-4 z-30"
             >
               <div className="w-12 h-12 rounded-full bg-[#D1A741]/20 border border-[#D1A741]/30 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-6 h-6 text-[#D1A741]" />
+                <ShieldCheck className="w-6 h-6 text-[#D1A741]"/>
               </div>
               <div>
                 <p className={`${montserrat.className} text-xl font-bold text-white leading-none`}>100%</p>

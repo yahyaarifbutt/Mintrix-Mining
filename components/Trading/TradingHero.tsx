@@ -51,7 +51,7 @@ export default function TradingHero() {
             
             {/* Solid Gold Button */}
             <Link 
-              href="/pricing" 
+              href="/contact"
               className={`${montserrat.className} w-full sm:w-auto text-center bg-[#D1A741] text-[#010301] px-8 py-3.5 rounded-full font-bold text-[12px] tracking-[0.1em] uppercase hover:bg-[#e8be55] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_10px_20px_rgba(209,167,65,0.2)]`}
             >
               Request Pricing

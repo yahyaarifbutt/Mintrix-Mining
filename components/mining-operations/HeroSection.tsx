@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import NextLink from "next/link";
 import { ArrowRight, Activity } from "lucide-react";
 import { fadeUp } from "./animations";
+import Image from "next/image";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
 
@@ -60,7 +61,13 @@ export default function HeroSection() {
         >
           <div className="absolute top-0 right-0 w-[75%] h-[85%] rounded-[2rem] overflow-hidden shadow-2xl bg-gray-100 border border-gray-200">
             <div className="absolute inset-0 bg-[#0b0f0d] flex items-center justify-center">
-              <span className="text-gray-500 font-medium">Main Site Image (Tall)</span>
+              <Image 
+                src="/Images/MineralImage1.webp" 
+                alt="Mineral Image 1" 
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
@@ -72,7 +79,12 @@ export default function HeroSection() {
             className="absolute bottom-0 left-0 w-[55%] aspect-square rounded-[2rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] border-8 border-white bg-gray-100"
           >
             <div className="absolute inset-0 bg-[#1a231e] flex items-center justify-center">
-              <span className="text-gray-400 font-medium text-sm text-center px-4">Secondary Focus<br/>(e.g., Machinery/Ore)</span>
+              <Image 
+                src="/Images/MineralImage2.png" 
+                alt="Mineral Image 2" 
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
 

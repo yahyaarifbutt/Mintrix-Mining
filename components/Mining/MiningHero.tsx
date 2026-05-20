@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Montserrat } from "next/font/google";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -68,24 +69,13 @@ export default function MiningHero() {
               Mintrix manages mining operations across multiple active sites in Kenya. From geological survey to extraction and on-site processing, every stage is controlled in-house — ensuring quality, output consistency, and responsible practices.
             </p>
             
-            {/* Action Buttons (Matched identically to HeroButtons.tsx styling & constraints) */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch gap-3 pt-4 w-full max-w-xl">
-              {/* Primary Button */}
-              <button className="group relative flex-1 flex items-center gap-3 p-3.5 sm:px-5 border border-[#D1A741]/40 rounded-xl bg-black/40 backdrop-blur-md hover:bg-[#D1A741]/10 hover:border-[#D1A741] hover:-translate-y-1 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(209,167,65,0.3)] transition-all duration-300 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#D1A741]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10 flex-shrink-0 p-2 bg-gradient-to-br from-[#D1A741] to-[#a8822d] rounded-full text-black shadow-sm">
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
-                </div>
-                
-                <div className="relative z-10 text-left">
-                  <h3 className={`${montserrat.className} text-white font-bold text-base leading-tight`}>View Active Sites</h3>
-                  <p className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors mt-0.5">Explore Locations</p>
-                </div>
-              </button>
-
-              {/* Secondary Button */}
-              <button className="group relative flex-1 flex items-center gap-3 p-3.5 sm:px-5 border border-white/20 rounded-xl bg-black/40 backdrop-blur-md hover:bg-white/5 hover:border-white/50 hover:-translate-y-1 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-300 overflow-hidden">
+              {/* Link wrapped as Button */}
+              <Link 
+                href="/contact" 
+                className="group relative w-full sm:w-[282px] flex items-center gap-3 p-3.5 sm:px-5 border border-white/20 rounded-xl bg-black/40 backdrop-blur-md hover:bg-white/5 hover:border-white/50 hover:-translate-y-1 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-300 overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10 flex-shrink-0 p-2 bg-white/10 border border-white/20 rounded-full text-white group-hover:bg-white group-hover:text-black transition-colors duration-300 shadow-sm">
@@ -96,7 +86,7 @@ export default function MiningHero() {
                   <h3 className={`${montserrat.className} text-white font-bold text-base leading-tight`}>Operations Team</h3>
                   <p className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors mt-0.5">Direct Inquiry</p>
                 </div>
-              </button>
+              </Link>
             </div>
 
           </div>

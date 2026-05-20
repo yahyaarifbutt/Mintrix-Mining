@@ -19,7 +19,7 @@ export default function CopperApplications() {
         <ClientAnimations delay={0.1} className="h-full">
           <div className="group relative w-full h-full min-h-[450px] rounded-[40px] overflow-hidden transition-all duration-500">
             <Image 
-              src="/Images/copper_applications.jpg" 
+              src="/Images/CopperImage2.webp" 
               alt="Mintrix Copper Applications"
               fill
               className="object-contain transition-transform duration-700 group-hover:scale-105"

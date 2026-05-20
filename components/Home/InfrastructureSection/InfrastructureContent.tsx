@@ -64,10 +64,10 @@ export default function InfrastructureContent() {
       </div>
 
       <div className="flex gap-4 pt-4">
-         <NextLink href="/commodities" className="text-sm font-bold text-white bg-[#0b0f0d] px-6 py-3 rounded-lg hover:bg-[#D1A741] transition-colors">
+         <NextLink href="/contact" className="text-sm font-bold text-white bg-[#0b0f0d] px-6 py-3 rounded-lg hover:bg-[#D1A741] transition-colors">
             View All Commodities
          </NextLink>
-         <NextLink href="/pricing" className="text-sm font-bold text-[#0b0f0d] border border-[#0b0f0d] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+         <NextLink href="/contact" className="text-sm font-bold text-[#0b0f0d] border border-[#0b0f0d] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             Request Pricing
          </NextLink>
       </div>
