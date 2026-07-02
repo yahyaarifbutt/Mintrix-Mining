@@ -9,13 +9,13 @@ export const FOOTER_DATA = {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Mining Operations", href: "/operations" },
+    { name: "Mining Operations", href: "" },
     { name: "Contact Us", href: "/contact" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Compliances", href: "/compliance" },
+    { name: "Privacy Policy", href: "" },
+    { name: "Terms of Service", href: "" },
+    { name: "Compliances", href: "" },
   ],
   socials: [
     { name: "LinkedIn", href: "https://www.linkedin.com/company/mintrix/", Icon: Linkedin },
