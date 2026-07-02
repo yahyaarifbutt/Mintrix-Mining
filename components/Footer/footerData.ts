@@ -9,7 +9,7 @@ export const FOOTER_DATA = {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Mining Operations", href: "" },
+    { name: "Mining Operations", href: "/mining-operations" },
     { name: "Contact Us", href: "/contact" },
   ],
   legal: [
